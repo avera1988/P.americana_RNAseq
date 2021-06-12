@@ -1,0 +1,74 @@
+#!/bin/bash
+##############################################################################
+#
+# This script uses UNITY cluster to assembly all P. americana Reads by Trinity
+#
+# Author Arturo VEra
+# Aug 2018
+#############################################################################
+
+#PBS -N Trinity_all
+#PBS -l walltime=50:00:00
+#PBS -l nodes=1:ppn=48
+#PBS -l mem=900GB
+
+module load bowtie2
+
+cd ${dir}
+
+/users/PAS0688/osu8531/local/src/trinityrnaseq-Trinity-v2.5.0/Trinity \
+--SS_lib_type RF \
+--seqType fq \
+--max_memory 900G \
+--left FH1.mapped.R1.fq,\
+FH2.mapped.R1.fq,\
+FH3.mapped.R1.fq,\
+FM1.mapped.R1.fq,\
+FM2.mapped.R1.fq,\
+FM3.mapped.R1.fq,\
+GN-h1.mapped.R1.fq,\
+GN-h2.mapped.R1.fq,\
+GN-h3.mapped.R1.fq,\
+GN-m1.mapped.R1.fq,\
+GN-m2.mapped.R1.fq,\
+GN-m3.mapped.R1.fq,\
+TH1.mapped.R1.fq,\
+TH2.mapped.R1.fq,\
+TH3.mapped.R1.fq,\
+TM1.mapped.R1.fq,\
+TM2.mapped.R1.fq,\
+TM3.mapped.R1.fq,\
+WTH-1.mapped.R1.fq,\
+WTH-2.mapped.R1.fq,\
+WTH-3.mapped.R1.fq,\
+WTM-1.mapped.R1.fq,\
+WTM-2.mapped.R1.fq,\
+WTM-3.mapped.R1.fq \
+--right FH1.mapped.R2.fq,\
+FH2.mapped.R2.fq,\
+FH3.mapped.R2.fq,\
+FM1.mapped.R2.fq,\
+FM2.mapped.R2.fq,\
+FM3.mapped.R2.fq,\
+GN-h1.mapped.R2.fq,\
+GN-h2.mapped.R2.fq,\
+GN-h3.mapped.R2.fq,\
+GN-m1.mapped.R2.fq,\
+GN-m2.mapped.R2.fq,\
+GN-m3.mapped.R2.fq,\
+TH1.mapped.R2.fq,\
+TH2.mapped.R2.fq,\
+TH3.mapped.R2.fq,\
+TM1.mapped.R2.fq,\
+TM2.mapped.R2.fq,\
+TM3.mapped.R2.fq,\
+WTH-1.mapped.R2.fq,\
+WTH-2.mapped.R2.fq,\
+WTH-3.mapped.R2.fq,\
+WTM-1.mapped.R2.fq,\
+WTM-2.mapped.R2.fq,\
+WTM-3.mapped.R2.fq \
+--CPU 48 \
+--full_cleanup \
+--output trinity.all.paried.alltreat.mapped
+
