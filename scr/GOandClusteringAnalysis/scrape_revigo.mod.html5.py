@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-
+##################################################################################################
+#	Scritp to Retrieve csv tables and treemap.R from REVIGO 
+#	Author Arturo Vera
+#	May 2021
+###################################################################################################
 import requests
 import time
 import sys
