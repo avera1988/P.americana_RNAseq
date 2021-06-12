@@ -1,3 +1,12 @@
+######################################################################
+# This script modifies the Trinoate annotation table adding CAZY 
+# and Insect blast values. It returns RData objects with Trinotate
+# modified table.
+#
+# Author: Arturo Vera
+# Dec 2018
+######################################################################
+
 library(tidyr)
 library(dplyr)
 
